@@ -1,14 +1,17 @@
 server:
   port: 8761                    # 指定该Eureka实例的端口
-
+spring:
+  application:
+    name: microservice-discovery-eureka    # 项目名称尽量用小写
 eureka:
   instance:
-    hostname: discovery         # 指定该Eureka实例的主机名
+    hostname: localhost         # 指定该Eureka实例的主机名#服务注册中心IP地址
   client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
+    registerWithEureka: true  #是否向服务注册中心注册自己
+    fetchRegistry: false #是否检索服务
+    serviceUrl: #服务注册中心的配置内容，指定服务注册中心的位置
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #defaultZone: ${DISCOVERY_URL:http://localhost:8761}/eureka/
 
 # 参考文档：http://projects.spring.io/spring-cloud/docs/1.0.3/spring-cloud.html#_standalone_mode
 # 参考文档：http://my.oschina.net/buwei/blog/618756
