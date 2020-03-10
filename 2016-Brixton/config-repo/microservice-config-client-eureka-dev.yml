@@ -1,5 +1,1 @@
-profile: abcd-dev
-
-
-
-# 参考文档：https://github.com/spring-cloud/spring-cloud-config/blob/master/docs/src/main/asciidoc/spring-cloud-config.adoc#discovery-first-bootstrap
+from: dev-environment-1.0
