@@ -10,6 +10,7 @@
 
   <modules>
     <module>microservice-discovery-eureka</module>
+    <module>microservice-discovery-eureka-ha</module>
     <module>microservice-provider-user</module>
     <module>microservice-consumer-movie-ribbon</module>
     <module>microservice-consumer-movie-feign</module>
