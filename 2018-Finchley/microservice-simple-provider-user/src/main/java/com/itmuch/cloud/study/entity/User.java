@@ -26,4 +26,7 @@ public class User {
   private Integer age;
   @Column
   private BigDecimal balance;
+
+  public User(long l, String account1, String 张三, int i, BigDecimal bigDecimal) {
+  }
 }
