@@ -27,6 +27,14 @@ public class User {
   @Column
   private BigDecimal balance;
 
+    public User(Long id, String username, String name, Integer age, BigDecimal balance) {
+        this.id = id;
+        this.username = username;
+        this.name = name;
+        this.age = age;
+        this.balance = balance;
+    }
+
   public User(long l, String account1, String 张三, int i, BigDecimal bigDecimal) {
   }
 }
