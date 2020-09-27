@@ -19,25 +19,21 @@ import java.math.BigDecimal;
 @RestController
 @Slf4j
 public class MovieController {
-  @Autowired
-  private RestTemplate restTemplate;
+    @Autowired
+    private RestTemplate restTemplate;
 
-  @HystrixCommand(fallbackMethod = "findByIdFallback")
-  @GetMapping("/users/{id}")
-  public User findById(@PathVariable Long id) {
-    // 这里用到了RestTemplate的占位符能力
-    User user = this.restTemplate.getForObject(
-      "http://microservice-provider-user/users/{id}",
-      User.class,
-      id
-    );
-    // ...电影微服务的业务...
-    return user;
-  }
+    @HystrixCommand(fallbackMethod = "findByIdFallback")
+    @GetMapping("/users/{id}")
+    public User findById(@PathVariable Long id) {
+        // 这里用到了RestTemplate的占位符能力
+        User user = this.restTemplate.getForObject("http://microservice-provider-user/users/{id}", User.class, id);
+        // ...电影微服务的业务...
+        return user;
+    }
 
-  public User findByIdFallback(Long id, Throwable throwable) {
-    log.error("进入回退方法", throwable);
-    return new User(id, "默认用户", "默认用户", 0, new BigDecimal(1));
-  }
+    public User findByIdFallback(Long id, Throwable throwable) {
+        System.out.println("进入回退方法" + throwable.toString());
+        return new User(id, "默认用户", "默认用户", 0, new BigDecimal(1));
+    }
 
 }

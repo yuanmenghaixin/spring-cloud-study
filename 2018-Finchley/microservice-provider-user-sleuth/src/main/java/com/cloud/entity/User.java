@@ -12,9 +12,11 @@ import java.math.BigDecimal;
  */
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+
+
 public class User {
+    public User() {
+    }
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author zhouli
  */
-@RequestMapping("/movies")
 @RestController
 public class MovieController {
   @Autowired

@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+
+
 public class User {
     public User() {
 

@@ -2,7 +2,6 @@ package com.cloud.config;
 
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.context.annotation.Configuration;
-import config.RibbonConfiguration;
 
 /**
  * 使用RibbonClient，为特定的目标服务自定义配置。
